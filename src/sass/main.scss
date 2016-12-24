@@ -1,0 +1,88 @@
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	padding-top: 70px;
+	background: #1E1E1E;
+	color: #f9f9f9;
+
+	#app{
+		.navbar-brand{
+			height: 55px;
+			> img {
+				display: inline;
+				height: 35px;
+			}
+		}
+
+		.loadingScreen{
+			.loadingImage{
+				margin: 0 auto;
+			}
+		}
+
+		.imageContainer{
+			.groupImage{
+				margin: 0 auto;
+			}
+		}
+		.tracksContainer{
+			.trackRow{
+				border-top: 1px solid #9d9d9d;
+				min-height: 50px;
+
+				&:hover{
+					background-color: #333;
+				}
+				&:nth-child(odd) {
+
+				}
+				.trackBaseRow{
+					.albumImageContainer{
+						.albumImage{
+							width: 50px;
+							height: 50px;
+						}
+					}
+					.playButtonContainer{
+						.playButton{
+							color: #ffffff;
+							&:hover{
+								cursor: pointer;
+							}
+						}
+					}
+					.trackNameContainer{
+						.trackName{
+
+						}
+					}
+				}
+				.trackExpandRow{
+					display: none;
+
+					&.active{
+						display: inline;
+					}
+
+					.trackAlbumRow{
+						.albumName{
+							padding: 5px;
+						}
+					}
+
+					.previewRow{
+
+					}
+					.externalUrlRow{
+						.externalUrlValue{
+							padding: 5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

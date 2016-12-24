@@ -1,0 +1,52 @@
+{
+  "name": "Linkin Park Radio",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently --kill-others \"npm run build-dev\" \"npm run start-server\" \"npm run styles-dev\"",
+    "start-server": "node_modules/.bin/webpack-dev-server",
+    "build": "node_modules/.bin/webpack",
+    "styles": "gulp",
+    "build-dev": "node_modules/.bin/webpack --watch",
+    "styles-dev": "gulp dev"
+  },
+  "author": "ILKEN",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^7.1.0",
+    "babel-polyfill": "^6.20.0",
+    "concurrently": "^3.1.0",
+    "eslint": "^3.9.1",
+    "eslint-config-react": "^1.1.7",
+    "eslint-plugin-react": "^6.6.0",
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-polyfill": "^6.20.0",
+    "firebase": "^3.4.0",
+    "flux": "^2.1.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "history": "^1.17.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1",
+    "webpack": "^1.13.2"
+  }
+}
