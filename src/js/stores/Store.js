@@ -1,6 +1,7 @@
 import { EventEmitter } from 'events';
 import dispatcher from '../dispatcher';
 import TrackData from '../data/TrackData';
+import StationData from '../data/StationData';
 
 class Store extends EventEmitter {
 	constructor () {
@@ -10,6 +11,7 @@ class Store extends EventEmitter {
 	}
 
 	updateData (response) {
+		this.tracks = [];
 		this.createTrackData(response.tracks);
 		this.emit('Update');
 	}
@@ -35,6 +37,10 @@ class Store extends EventEmitter {
 		return this.displayLimit === 10 ? 5 : 10;
 	}
 
+	switchStation(stationID){
+		StationData.getInstance().switchStation(stationID);
+	}
+
 	handleActions (action) {
 		switch (action.type) {
 			case 'UPDATE_TRACKS':{
@@ -43,6 +49,10 @@ class Store extends EventEmitter {
 			}
 			case 'TOP_TRACKS_BUTTON':{
 				this.updateDisplayLimit();
+				break;
+			}
+			case 'SWITCH_STATION':{
+				this.switchStation(action.stationID);
 				break;
 			}
 		}

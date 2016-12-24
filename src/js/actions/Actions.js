@@ -12,3 +12,10 @@ export function topTracksButtonClick () {
 		type: 'TOP_TRACKS_BUTTON'
 	});
 }
+
+export function switchStation (stationID) {
+	dispatcher.dispatch({
+		type: 'SWITCH_STATION',
+		stationID,
+	});
+}

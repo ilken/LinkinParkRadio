@@ -2,8 +2,9 @@ import React from 'react';
 import Tracks from './Tracks';
 import MoreButton from './MoreButton';
 import LoadingScreen from './LoadingScreen';
+import SwitchStation from './SwitchStation';
+import StationData from '../data/StationData';
 import Store from '../stores/Store';
-import * as Actions from '../actions/Actions';
 
 export default class Radio extends React.Component {
 	constructor () {
@@ -24,18 +25,7 @@ export default class Radio extends React.Component {
 			});
 		});
 
-		$.ajax({
-		    type: "GET",
-		    url: "https://api.spotify.com/v1/artists/6XyY86QOPPrYVGvF9ch6wz/top-tracks",
-			data: "country=GB",
-		    success: (response) => {
-		        Actions.update(response);
-		    },
-		    error: (XMLHttpRequest, textStatus, errorThrown) => {
-		        console.log("Status: " + textStatus);
-				console.log("Error: " + errorThrown);
-		    }
-		});
+		StationData.getInstance().requestStationData();
 	}
 
 	render () {
@@ -44,8 +34,15 @@ export default class Radio extends React.Component {
 		else
 			return (
 				<div className="container">
+					<div className="row">
+						<div className="col-md-12 col-sm-12 col-xs-12 imageContainer">
+							<img src={StationData.getInstance().getStationImage()} className="img-responsive groupImage" alt="Linkin Park"/>
+							<h2 className="text-center"> {StationData.getInstance().getStationName()} </h2>
+						</div>
+					</div>
 					<Tracks tracks={this.state.tracks}/>
 					<MoreButton numberOfTracks={this.state.numberOfTracks}/>
+					<SwitchStation/>
 				</div>
 			);
 	}
