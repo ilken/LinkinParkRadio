@@ -94,13 +94,13 @@ body {
 
 		.switchStationContainer{
 			border-top: 1px solid white;
-			
+
 			.switchStationTitle{
 
 			}
-			.stationsContainer{
-				.station{
-
+			.station{
+				&:hover{
+					cursor: pointer;
 				}
 			}
 		}
