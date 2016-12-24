@@ -17,6 +17,10 @@ body {
 			}
 		}
 
+		footer{
+			border-top: 1px solid #080808;
+		}
+
 		.loadingScreen{
 			.loadingImage{
 				margin: 0 auto;
@@ -83,6 +87,9 @@ body {
 					}
 				}
 			}
+		}
+		.moreButtonContainer{
+			padding: 5px;
 		}
 	}
 }
